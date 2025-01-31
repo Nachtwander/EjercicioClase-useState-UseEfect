@@ -50,8 +50,11 @@ export default function Usuarios() {
     setFechaNacimiento("");
   };
 
-  // Eliminar usuario por índice
+  // Eliminar usuario por indice
+  // El indice es la posicion del usuario en el array. Ejemplo: si hay 3 usuarios, sus indices son 0, 1, 2.
   const eliminarUsuario = (indice: number) => {
+    //.filter(...) crea un nuevo array con todos los usuarios excepto el que esta en la posicion indice.
+    //La condición (_, i) => i !== indice significa: "Manten todos los usuarios excepto el que tenga el mismo indice que indice".
     const nuevaLista = usuarios.filter((_, i) => i !== indice);
     setUsuarios(nuevaLista);
   };
@@ -68,9 +71,9 @@ export default function Usuarios() {
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Email</th>
-              <th>Teléfono</th>
+              <th>Telefono</th>
               <th>Fecha Nacimiento</th>
-              <th>Acción</th>
+              <th>Accion</th>
             </tr>
           </thead>
           <tbody>
@@ -131,7 +134,7 @@ export default function Usuarios() {
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
-            <th>Teléfono</th>
+            <th>Telefono</th>
             <th>Fecha Nacimiento</th>
             <th>Edad</th>
             <th>Acciones</th>
